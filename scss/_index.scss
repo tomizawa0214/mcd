@@ -1,16 +1,51 @@
+body,
 .index {
-    position: relative;
-    height: 100vh;
-    background-repeat: no-repeat;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.index {
+    position: absolute;
+    background-image: url(../img/top_back.jpg);
     background-size: cover;
-    background-position: center center;
-    background-image: url("../img/top.png");
+    background-position: top;
+    filter: grayscale(70%);
+    z-index: -1;
+    opacity: .7;
+}
+
+.index-effect {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+}
+
+@for $i from 1 through 18 {
+    $a: #{$i*90};
+    $b: #{$i*90+360};
+
+    .index-effect__blob:nth-child(#{$i}) {
+        animation: move#{$i} 10s infinite linear;
+    }
+
+    @keyframes move#{$i} {
+        from {
+            transform: rotate(#{$a}deg) translate(200px, 0.1px) rotate(-#{$a}deg);
+        }
+        to {
+            transform: rotate(#{$b}deg) translate(200px, 0.1px) rotate(-#{$b}deg);
+        }
+    }
 }
 
 .index-logo {
-    position: absolute;
-    z-index: 10;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    &__img {
+        z-index: 10;
+    }
 }
