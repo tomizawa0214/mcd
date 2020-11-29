@@ -11,9 +11,8 @@ body,
     background-image: url(../img/top_back.jpg);
     background-size: cover;
     background-position: top;
-    filter: grayscale(70%);
+    filter: grayscale(60%);
     z-index: -1;
-    opacity: .7;
 }
 
 .index-effect {
@@ -32,10 +31,10 @@ body,
 
     @keyframes move#{$i} {
         from {
-            transform: rotate(#{$a}deg) translate(200px, 0.1px) rotate(-#{$a}deg);
+            transform: rotate(#{$a}deg) translate(250px, .1px) rotate(-#{$a}deg);
         }
         to {
-            transform: rotate(#{$b}deg) translate(200px, 0.1px) rotate(-#{$b}deg);
+            transform: rotate(#{$b}deg) translate(250px, .1px) rotate(-#{$b}deg);
         }
     }
 }
@@ -75,7 +74,7 @@ body,
     
     & > div {
         animation: rain 500ms linear infinite;
-        background-color: rgba(#000, 0.25);
+        background-color: rgba(#263238, .7);
         position: absolute;
         left: 0;
         top: -$rain_drop_height;
