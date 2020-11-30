@@ -1,3 +1,32 @@
+// オープニングアニメーション
+const animation = () => {
+    new Vivus('animation', {
+            type: 'oneByOne',
+            duration: 100,
+            forceRender: false ,
+            animTimingFunction:Vivus.EASE
+        }
+    )
+}
+setTimeout(animation, 500);
+
+const openingWrap = document.querySelector('.opening');
+openingWrap.style.opacity = 1;
+openingWrap.style.transition = '1s';
+setTimeout(() => {
+    openingWrap.style.opacity = 0;
+}, 3000);
+setTimeout(() => {
+    openingWrap.style.display = 'none';
+}, 4000)
+
+const indexWrap = document.querySelector('.index');
+indexWrap.style.opacity = 0;
+indexWrap.style.transition = '2s';
+setTimeout(() => {
+    indexWrap.style.opacity = 1;
+}, 4000);
+
 // マウスストーカー
 var colour=["#33ff99","#fff","#ffff33"];
 var sparkles=50;

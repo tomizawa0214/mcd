@@ -1,31 +1,85 @@
-body,
-.index {
-    margin: 0;
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
-}
-
 .index {
     position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
     background-image: url(../img/top_back.jpg);
     background-size: cover;
     background-position: top;
     filter: grayscale(60%);
-    z-index: -1;
-}
-
-.index-effect {
-    position: absolute;
-    width: 100vw;
-    height: 100vh;
+    &__effect {
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+    }
+    &__logo {
+        display: flex;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+        &--img {
+            opacity: 0;
+            animation-name: fadein;
+            animation-duration: 2s;
+            animation-delay: 5s;
+            animation-fill-mode: forwards;
+            z-index: 10;
+        }
+    }
+    @keyframes fadein {
+        from {
+            opacity: 0;
+            transform: translateY(120px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    &__rain {
+        $rain_drop_height: 20vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        
+        & > div {
+            animation: rain 500ms linear infinite;
+            background-color: rgba(#263238, .7);
+            position: absolute;
+            left: 0;
+            top: -$rain_drop_height;
+            width: 3px;
+            height: $rain_drop_height;
+            transform-origin: center center;
+        }
+        @for $i from 1 through 25 {
+            & > div:nth-child(#{$i}) {
+                animation-delay: #{$i * 100}ms;
+                animation-duration: random(250) + 800ms;
+                left: random(100) + vw;
+            }
+        }
+        
+        @keyframes rain {
+            from {
+                transform: rotate(-5deg) translateY(-$rain_drop_height);
+            }
+            to {
+                transform: rotate(-5deg) translateY(10vh + $rain_drop_height);
+            }
+        }
+    }
 }
 
 @for $i from 1 through 18 {
     $a: #{$i*90};
     $b: #{$i*90+360};
 
-    .index-effect__blob:nth-child(#{$i}) {
+    .index__effect--blob:nth-child(#{$i}) {
         animation: move#{$i} 10s infinite linear;
     }
 
@@ -35,67 +89,6 @@ body,
         }
         to {
             transform: rotate(#{$b}deg) translate(250px, .1px) rotate(-#{$b}deg);
-        }
-    }
-}
-
-.index-logo {
-    display: flex;
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
-    &__img {
-        opacity: 0;
-        animation-name: fadein;
-        animation-duration: 2s;
-        animation-delay: .8s;
-        animation-fill-mode: forwards;
-        z-index: 10;
-    }
-}
-@keyframes fadein {
-    from {
-        opacity: 0;
-        transform: translateY(120px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.index-rain {
-    $rain_drop_height: 20vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    
-    & > div {
-        animation: rain 500ms linear infinite;
-        background-color: rgba(#263238, .7);
-        position: absolute;
-        left: 0;
-        top: -$rain_drop_height;
-        width: 3px;
-        height: $rain_drop_height;
-        transform-origin: center center;
-    }
-    @for $i from 1 through 25 {
-        & > div:nth-child(#{$i}) {
-            animation-delay: #{$i * 100}ms;
-            animation-duration: random(250) + 800ms;
-            left: random(100) + vw;
-        }
-    }
-    
-    @keyframes rain {
-        from {
-            transform: rotate(-5deg) translateY(-$rain_drop_height);
-        }
-        to {
-            transform: rotate(-5deg) translateY(10vh + $rain_drop_height);
         }
     }
 }

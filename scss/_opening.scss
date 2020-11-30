@@ -1,0 +1,29 @@
+.opening {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    &__bg {
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+    }
+}
+
+#animation,
+.opening__path {
+    fill: none;
+    stroke: #fff;
+    stroke-width: 20;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-miterlimit: 10;
+    stroke-dasharray: 1500;
+    stroke-dashoffset: 1500;
+}

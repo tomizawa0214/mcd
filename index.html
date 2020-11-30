@@ -22,66 +22,89 @@
 </head>
 
 <body>
-    <div class="index"></div>
-    <svg class="index-effect">
-        <image xlink:href="img/top.png" mask="url(#mask)" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" />
-        <defs>
-            <filter id="gooey" height="130%">
-                <feGaussianBlur in="SourceGraphic" stdDeviation="15" result="blur" />
-                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
-            </filter>
-        </defs>
-        <mask id="mask" x="0" y="0">
-            <g style="filter: url(#gooey)">
-                <circle class="index-effect__blob" cx="10%" cy="10%" r="70" fill="#ccc" fill-opacity=".5" stroke="#ccc"/>
-                <circle class="index-effect__blob" cx="50%" cy="10%" r="30" fill="#fff" fill-opacity=".5" stroke="#fff"/>
-                <circle class="index-effect__blob" cx="17%" cy="15%" r="60" fill="#ccc" fill-opacity=".5" stroke="#ccc"/>
-                <circle class="index-effect__blob" cx="90%" cy="20%" r="110" fill="#fff" fill-opacity=".5" stroke="#fff"/>
-                <circle class="index-effect__blob" cx="50%" cy="60%" r="70" fill="#fff" fill-opacity=".5" stroke="#fff"/>
-                <circle class="index-effect__blob" cx="70%" cy="90%" r="10" fill="#ccc" fill-opacity=".5" stroke="#ccc"/>
-                <circle class="index-effect__blob" cx="90%" cy="60%" r="80" fill="#fff" fill-opacity=".5" stroke="#fff"/>
-                <circle class="index-effect__blob" cx="30%" cy="90%" r="70" fill="#ccc" fill-opacity=".5" stroke="#ccc"/>
-                <circle class="index-effect__blob" cx="10%" cy="10%" r="70" fill="#fff" fill-opacity=".5" stroke="#fff"/>
-                <circle class="index-effect__blob" cx="50%" cy="10%" r="10" fill="#ccc" fill-opacity=".5" stroke="#ccc"/>
-                <circle class="index-effect__blob" cx="40%" cy="20%" r="110" fill="#ccc" fill-opacity=".5" stroke="#ccc"/>
-                <circle class="index-effect__blob" cx="30%" cy="25%" r="20" fill="#fff" fill-opacity=".5" stroke="#fff"/>
-                <circle class="index-effect__blob" cx="80%" cy="60%" r="70" fill="#ccc" fill-opacity=".5" stroke="#ccc"/>
-                <circle class="index-effect__blob" cx="17%" cy="10%" r="90" fill="#fff" fill-opacity=".5" stroke="#fff"/>
-                <circle class="index-effect__blob" cx="40%" cy="60%" r="80" fill="#ccc" fill-opacity=".5" stroke="#ccc"/>
-                <circle class="index-effect__blob" cx="10%" cy="50%" r="70" fill="#fff" fill-opacity=".5" stroke="#fff"/>
-            </g>
-        </mask>
-    </svg>
-    <h1 class="index-logo">
-        <img class="index-logo__img" src="img/top_logo.png" alt="MCD">
-    </h1>
-    <div class="index-rain">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
+    <div class="opening">
+        <svg version="1.1" id="animation" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="841.89px" height="595.276px" viewBox="0 0 841.89 595.276" enable-background="new 0 0 841.89 595.276" xml:space="preserve">
+            <image xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./img/mcd_logo.svg" width="850" height="600" mask="url(#clipmask)"></image>
+            <mask id="clipmask" maskUnits="objectBoundingBox">
+            <path class="opening__path" d="
+                M327,340.135c-1.5,2.334-5.667,6.333-5.667,6.333c-4.5-4.833-6.333-37-6.333-37c-1.167-10.167-2-50.5-2-50.5s1.841,21.202,9,31.5
+                c0,0,8.617,11.975,19.167,12.25c0,0,9.333,3.25,19-11.917c0,0,15.833-23.667,18-31c0,0-2.333,23.167,0,30.667
+                c0,0,6.167,22.666,34.833,31.833"/>
+            <path class="opening__path" d="
+                M430.667,275.468c0,0-7.833-9.167-13.667-5.833c0,0-7.526,2.143-10.667,15c0,0-4.167,12.833,2.5,18.833c0,0,6.667,6.333,18,0
+                c0,0,11.5-5.833,15.667-11.833"/>
+            <path class="opening__path" d="
+                M466.833,239.635c0,0-6.333,12-8.333,39.667c0,0-3.333,37.166,6.667,54.833"/>
+            <path class="opening__path" d="
+                M458.5,279.301c0,0-7,0.833-8.833-7.167c0,0,0.08-6.747,6-11.167c0,0,10.358-10.503,22.667-14.333c0,0,19.24-3.488,30.667-2
+                c0,0,17.001,4.333,19.167,8.667c0,0,4.666,9.333-2.834,20.333c0,0-12.332,19.174-19.666,24.003c0,0-43.001,34.496-45.834,36.496
+                c0,0-22,18.667-27.667,20.667"/>
+            </mask>
+        </svg>
+        <div class="opening__bg"></div>
     </div>
+    
+    <div class="index">
+        <svg class="index__effect">
+            <image xlink:href="img/top.png" mask="url(#mask)" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" />
+            <defs>
+                <filter id="gooey" height="130%">
+                    <feGaussianBlur in="SourceGraphic" stdDeviation="15" result="blur" />
+                    <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+                </filter>
+            </defs>
+            <mask id="mask" x="0" y="0">
+                <g style="filter: url(#gooey)">
+                    <circle class="index__effect--blob" cx="10%" cy="10%" r="70" fill="#ccc" fill-opacity=".5" stroke="#ccc"/>
+                    <circle class="index__effect--blob" cx="50%" cy="10%" r="30" fill="#fff" fill-opacity=".5" stroke="#fff"/>
+                    <circle class="index__effect--blob" cx="17%" cy="15%" r="60" fill="#ccc" fill-opacity=".5" stroke="#ccc"/>
+                    <circle class="index__effect--blob" cx="90%" cy="20%" r="110" fill="#fff" fill-opacity=".5" stroke="#fff"/>
+                    <circle class="index__effect--blob" cx="50%" cy="60%" r="70" fill="#fff" fill-opacity=".5" stroke="#fff"/>
+                    <circle class="index__effect--blob" cx="70%" cy="90%" r="10" fill="#ccc" fill-opacity=".5" stroke="#ccc"/>
+                    <circle class="index__effect--blob" cx="90%" cy="60%" r="80" fill="#fff" fill-opacity=".5" stroke="#fff"/>
+                    <circle class="index__effect--blob" cx="30%" cy="90%" r="70" fill="#ccc" fill-opacity=".5" stroke="#ccc"/>
+                    <circle class="index__effect--blob" cx="10%" cy="10%" r="70" fill="#fff" fill-opacity=".5" stroke="#fff"/>
+                    <circle class="index__effect--blob" cx="50%" cy="10%" r="10" fill="#ccc" fill-opacity=".5" stroke="#ccc"/>
+                    <circle class="index__effect--blob" cx="40%" cy="20%" r="110" fill="#ccc" fill-opacity=".5" stroke="#ccc"/>
+                    <circle class="index__effect--blob" cx="80%" cy="60%" r="70" fill="#ccc" fill-opacity=".5" stroke="#ccc"/>
+                    <circle class="index__effect--blob" cx="17%" cy="10%" r="5" fill="#fff" fill-opacity=".5" stroke="#fff"/>
+                    <circle class="index__effect--blob" cx="40%" cy="60%" r="80" fill="#ccc" fill-opacity=".5" stroke="#ccc"/>
+                    <circle class="index__effect--blob" cx="10%" cy="50%" r="70" fill="#fff" fill-opacity=".5" stroke="#fff"/>
+                </g>
+            </mask>
+        </svg>
+        <h1 class="index__logo">
+            <img class="index__logo--img" src="img/top_logo.png" alt="MCD">
+        </h1>
+        <div class="index__rain">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vivus@latest/dist/vivus.min.js"></script>
     <script src="js/main.js"></script>
 </body>
 
