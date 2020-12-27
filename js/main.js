@@ -5,27 +5,30 @@ const animation = () => {
             duration: 100,
             forceRender: false ,
             animTimingFunction:Vivus.EASE
+        },
+        obj => {
+            setTimeout(() => {
+                obj.el.classList.add('opening-finished');
+            }, 300)
         }
     )
 }
-setTimeout(animation, 500);
 
-const openingWrap = document.querySelector('.opening');
-openingWrap.style.opacity = 1;
-openingWrap.style.transition = '1s';
-setTimeout(() => {
-    openingWrap.style.opacity = 0;
-}, 3000);
-setTimeout(() => {
-    openingWrap.style.display = 'none';
-}, 4000)
+// オープニングアニメーションの後にシャッター実行
+let promise = new Promise((resolve, reject) => {
+    resolve(setTimeout(animation, 500));
+})
 
-const indexWrap = document.querySelector('.index');
-indexWrap.style.opacity = 0;
-indexWrap.style.transition = '2s';
-setTimeout(() => {
-    indexWrap.style.opacity = 1;
-}, 4000);
+promise.then(() => {
+    return new Promise((resolve, reject) => {
+        const opening = document.querySelector('.opening');
+        setTimeout(() => {
+            resolve(opening.classList.add('shutter-anime'))
+        }, 1500)
+    })
+    }).catch(() => { // エラーハンドリング
+    console.error('Something wrong!')
+})
 
 // マウスストーカー
 var colour=["#33ff99","#fff","#ffff33"];
