@@ -1,3 +1,8 @@
+@import url(https://fonts.googleapis.com/css?family=Exo:100);
+$bg-url: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAIAAACRXR/mAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAABnSURBVHja7M5RDYAwDEXRDgmvEocnlrQS2SwUFST9uEfBGWs9c97nbGtDcquqiKhOImLs/UpuzVzWEi1atGjRokWLFi1atGjRokWLFi1atGjRokWLFi1af7Ukz8xWp8z8AAAA//8DAJ4LoEAAlL1nAAAAAElFTkSuQmCC";
+$bg-width: 50px;
+$bg-height: 50px;
+    
 .opening {
     position: fixed;
     display: flex;
@@ -8,7 +13,14 @@
     top: 0;
     left: 0;
     z-index: 9999;
+    color: #999;
+    text-align: center;
     background-color: #fff;
+    background: url($bg-url) repeat 0 0;
+    animation: bg-scrolling-reverse .92s linear infinite;
+    @keyframes bg-scrolling-reverse {
+        100% { background-position: $bg-width $bg-height; }
+    }
     &__bg {
         position: absolute;
         width: 100%;
@@ -23,7 +35,7 @@
 }
 
 .shutter-anime {
-    animation: shutter 3s ease-in-out .3s forwards;
+    animation: shutter 2.5s ease-in-out .8s forwards, bg-scrolling-reverse .92s linear infinite;
     @keyframes shutter {
         from {
             transform: translateX(0);
@@ -32,7 +44,7 @@
             transform: translateX(0);
         }
         to {
-            transform: translateX(100%);
+            transform: translateX(120%) skewX(10deg);
         }
     }
 }
