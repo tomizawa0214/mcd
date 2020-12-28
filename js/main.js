@@ -16,7 +16,7 @@ const animation = () => {
 
 // オープニングアニメーションの後にシャッター実行
 let promise = new Promise((resolve, reject) => {
-    resolve(setTimeout(animation, 500));
+    resolve(setTimeout(animation, 1000));
 })
 
 promise.then(() => {
@@ -24,7 +24,7 @@ promise.then(() => {
         const opening = document.querySelector('.opening');
         setTimeout(() => {
             resolve(opening.classList.add('shutter-anime'))
-        }, 1500)
+        }, 1800)
     })
     }).catch(() => { // エラーハンドリング
     console.error('Something wrong!')
