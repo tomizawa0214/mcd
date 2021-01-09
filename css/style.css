@@ -1,4 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Exo:100);
+@import url(https://fonts.googleapis.com/css?family=Exo:100);
 body {
   margin: 0;
   padding: 0;
@@ -13,7 +14,7 @@ body {
   left: -8px;
   width: 16px;
   height: 16px;
-  z-index: 9999;
+  z-index: 9998;
   background-color: rgba(255, 255, 255, 0.5);
   border-radius: 50%;
   -webkit-transition: top, .5s, left .5s, width .5s, height .5s, background-color .5s, -webkit-transform .2s;
@@ -52,7 +53,7 @@ body {
   height: 100vh;
   top: 0;
   left: 0;
-  z-index: 9999;
+  z-index: 9998;
   color: #999;
   text-align: center;
   background-color: #fff;
@@ -87,8 +88,8 @@ body {
 }
 
 .shutter-anime {
-  -webkit-animation: shutter 2.5s ease-in-out .8s forwards, bg-scrolling-reverse .92s linear infinite;
-          animation: shutter 2.5s ease-in-out .8s forwards, bg-scrolling-reverse .92s linear infinite;
+  -webkit-animation: shutter 2s ease-in-out 1.8s forwards, bg-scrolling-reverse .92s linear infinite;
+          animation: shutter 2s ease-in-out 1.8s forwards, bg-scrolling-reverse .92s linear infinite;
 }
 
 @-webkit-keyframes shutter {
@@ -96,7 +97,7 @@ body {
     -webkit-transform: translateX(0);
             transform: translateX(0);
   }
-  30%, 70% {
+  30% {
     -webkit-transform: translateX(0);
             transform: translateX(0);
   }
@@ -111,7 +112,7 @@ body {
     -webkit-transform: translateX(0);
             transform: translateX(0);
   }
-  30%, 70% {
+  30% {
     -webkit-transform: translateX(0);
             transform: translateX(0);
   }
@@ -173,8 +174,8 @@ body {
 
 .index__logo--img {
   opacity: 0;
-  -webkit-animation: fadein 2s 5s forwards;
-          animation: fadein 2s 5s forwards;
+  -webkit-animation: fadein 2s 5.5s forwards;
+          animation: fadein 2s 5.5s forwards;
   z-index: 10;
 }
 
@@ -687,5 +688,68 @@ body {
   to {
     -webkit-transform: rotate(1980deg) translate(250px, 0.1px) rotate(-1980deg);
             transform: rotate(1980deg) translate(250px, 0.1px) rotate(-1980deg);
+  }
+}
+
+#page-animate::before {
+  content: '';
+  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 130%;
+  height: 100vh;
+  top: 0;
+  right: 100%;
+  z-index: 9999;
+  color: #999;
+  text-align: center;
+  background-color: #fff;
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAIAAACRXR/mAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAABnSURBVHja7M5RDYAwDEXRDgmvEocnlrQS2SwUFST9uEfBGWs9c97nbGtDcquqiKhOImLs/UpuzVzWEi1atGjRokWLFi1atGjRokWLFi1atGjRokWLFi1af7Ukz8xWp8z8AAAA//8DAJ4LoEAAlL1nAAAAAElFTkSuQmCC") repeat 0 0;
+  pointer-events: none;
+}
+
+#page-animate.is-slide-in::before {
+  -webkit-animation: slide-page 1.8s ease-in-out forwards;
+          animation: slide-page 1.8s ease-in-out forwards;
+}
+
+@-webkit-keyframes slide-page {
+  from {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  30% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  to {
+    -webkit-transform-origin: top left;
+            transform-origin: top left;
+    -webkit-transform: translateX(80%) skewX(10deg);
+            transform: translateX(80%) skewX(10deg);
+  }
+}
+
+@keyframes slide-page {
+  from {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  30% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  to {
+    -webkit-transform-origin: top left;
+            transform-origin: top left;
+    -webkit-transform: translateX(80%) skewX(10deg);
+            transform: translateX(80%) skewX(10deg);
   }
 }

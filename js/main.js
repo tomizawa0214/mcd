@@ -24,37 +24,37 @@ promise.then(() => {
         const opening = document.querySelector('.opening');
         setTimeout(() => {
             resolve(opening.classList.add('shutter-anime'))
-        }, 1800)
+        }, 2000)
     })
     }).catch(() => { // エラーハンドリング
     console.error('Something wrong!')
 })
 
 
-//マウスストーカー用のdivを取得
+// マウスストーカー用のdivを取得
 const stalker = document.querySelector('.stalker');
 
-//aタグにホバー中かどうかの判別フラグ
+// aタグにホバー中かどうかの判別フラグ
 let hovFlag = false;
 
-//マウスに追従させる処理 （リンクに吸い付いてる時は除外する）
+// マウスに追従させる処理 （リンクに吸い付いてる時は除外する）
 document.addEventListener('mousemove', e => {
     if (!hovFlag) {
         stalker.style.transform = 'translate(' + e.clientX + 'px, ' + e.clientY + 'px)';
     }
 });
 
-//リンクへ吸い付く処理
+// リンクへ吸い付く処理
 const linkElem = document.querySelectorAll('a');
 for (let i = 0; i < linkElem.length; i++) {
-    //マウスホバー時
+    // マウスホバー時
     linkElem[i].addEventListener('mouseover', e => {
         hovFlag = true;
 
-        //マウスストーカーにクラスをつける
+        // マウスストーカーにクラスをつける
         stalker.classList.add('hov_');
 
-        //マウスストーカーの位置をリンクの中心に固定
+        // マウスストーカーの位置をリンクの中心に固定
         let rect = e.target.getBoundingClientRect();
         let posX = rect.left + (rect.width / 2);
         let posY = rect.top + (rect.height / 2);
@@ -62,9 +62,29 @@ for (let i = 0; i < linkElem.length; i++) {
         stalker.style.transform = 'translate(' + posX + 'px, ' + posY + 'px)';
 
     });
-    //マウスホバー解除時
+    // マウスホバー解除時
     linkElem[i].addEventListener('mouseout', e => {
         hovFlag = false;
         stalker.classList.remove('hov_');
     });
+}
+
+// ページ遷移のスライドアニメーション
+window.onload = (() => {
+    document.body.classList.remove('is-slide');
+});
+
+const pageLink = document.querySelectorAll('.slide-page');
+for (let i = 0; i < pageLink.length; i++) {
+    pageLink[i].onclick = e => {
+        e.preventDefault();
+        const url = pageLink[i].getAttribute('href');
+
+        if (url !== '') {
+            document.body.classList.add('is-slide-in');
+            setTimeout(() => {
+                window.location = url;
+            }, 1700);
+        }
+    }
 }

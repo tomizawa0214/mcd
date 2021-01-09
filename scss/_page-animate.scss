@@ -1,0 +1,42 @@
+@import url(https://fonts.googleapis.com/css?family=Exo:100);
+$bg-url: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAIAAACRXR/mAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAABnSURBVHja7M5RDYAwDEXRDgmvEocnlrQS2SwUFST9uEfBGWs9c97nbGtDcquqiKhOImLs/UpuzVzWEi1atGjRokWLFi1atGjRokWLFi1atGjRokWLFi1af7Ukz8xWp8z8AAAA//8DAJ4LoEAAlL1nAAAAAElFTkSuQmCC";
+$bg-width: 50px;
+$bg-height: 50px;
+
+#page-animate {
+    &::before {
+        content: '';
+        position: fixed;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 130%;
+        height: 100vh;
+        top: 0;
+        right: 100%;
+        z-index: 9999;
+        color: #999;
+        text-align: center;
+        background-color: #fff;
+        background: url($bg-url) repeat 0 0;
+        pointer-events: none;
+    }
+}
+
+#page-animate.is-slide-in {
+    &::before {
+        animation: slide-page 1.8s ease-in-out forwards;
+        @keyframes slide-page {
+            from {
+                transform: translateX(0);
+            }
+            30% {
+                transform: translateX(0);
+            }
+            to {
+                transform-origin: top left;
+                transform: translateX(80%) skewX(10deg);
+            }
+        }
+    }
+}
