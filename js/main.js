@@ -82,9 +82,10 @@ for (let i = 0; i < pageLink.length; i++) {
 
         if (url !== '') {
             document.body.classList.add('is-slide-in');
-            setTimeout(() => {
+            let slideAnime = document.querySelector('.is-slide-in');
+            slideAnime.addEventListener('animationend', () => {
                 window.location = url;
-            }, 1700);
+            });
         }
     }
 }

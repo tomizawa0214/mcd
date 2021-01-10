@@ -716,16 +716,12 @@ body {
 }
 
 #page-animate.is-slide-in::before {
-  -webkit-animation: slide-page 1.8s ease-in-out forwards;
-          animation: slide-page 1.8s ease-in-out forwards;
+  -webkit-animation: slide-page 1.5s ease-in-out forwards;
+          animation: slide-page 1.5s ease-in-out forwards;
 }
 
 @-webkit-keyframes slide-page {
   from {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-  }
-  30% {
     -webkit-transform: translateX(0);
             transform: translateX(0);
   }
@@ -739,10 +735,6 @@ body {
 
 @keyframes slide-page {
   from {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-  }
-  30% {
     -webkit-transform: translateX(0);
             transform: translateX(0);
   }
