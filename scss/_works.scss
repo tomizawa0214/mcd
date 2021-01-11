@@ -1,0 +1,38 @@
+.works {
+    background-color: #000;
+}
+
+#page-start {
+    &::before {
+        content: '';
+        position: fixed;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 130%;
+        height: 100vh;
+        top: 0;
+        left: 100%;
+        z-index: 9999;
+        color: #999;
+        text-align: center;
+        background-color: #fff;
+        background: url($bg-url) repeat 0 0;
+        pointer-events: none;
+    }
+}
+
+#page-start.is-slide-in {
+    &::before {
+        animation: slide-start 1.5s ease-in-out forwards;
+        @keyframes slide-start {
+            from {
+                left: 100%;
+                transform: skew(10deg);
+            }
+            to {
+                left: 0;
+            }
+        }
+    }
+}

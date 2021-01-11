@@ -97,10 +97,6 @@ body {
     -webkit-transform: translateX(0);
             transform: translateX(0);
   }
-  30% {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-  }
   to {
     -webkit-transform: translateX(120%) skewX(10deg);
             transform: translateX(120%) skewX(10deg);
@@ -109,10 +105,6 @@ body {
 
 @keyframes shutter {
   from {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-  }
-  30% {
     -webkit-transform: translateX(0);
             transform: translateX(0);
   }
@@ -691,7 +683,7 @@ body {
   }
 }
 
-#page-animate::before {
+#page-end::before {
   content: '';
   position: fixed;
   display: -webkit-box;
@@ -715,33 +707,84 @@ body {
   pointer-events: none;
 }
 
-#page-animate.is-slide-in::before {
-  -webkit-animation: slide-page 1.5s ease-in-out forwards;
-          animation: slide-page 1.5s ease-in-out forwards;
+#page-end.is-slide-in::before {
+  -webkit-animation: slide-end 1.5s ease-in-out forwards;
+          animation: slide-end 1.5s ease-in-out forwards;
 }
 
-@-webkit-keyframes slide-page {
+@-webkit-keyframes slide-end {
   from {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
+    right: 100%;
+    -webkit-transform: skew(10deg);
+            transform: skew(10deg);
   }
   to {
-    -webkit-transform-origin: top left;
-            transform-origin: top left;
-    -webkit-transform: translateX(80%) skewX(10deg);
-            transform: translateX(80%) skewX(10deg);
+    right: 0;
   }
 }
 
-@keyframes slide-page {
+@keyframes slide-end {
   from {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
+    right: 100%;
+    -webkit-transform: skew(10deg);
+            transform: skew(10deg);
   }
   to {
-    -webkit-transform-origin: top left;
-            transform-origin: top left;
-    -webkit-transform: translateX(80%) skewX(10deg);
-            transform: translateX(80%) skewX(10deg);
+    right: 0;
+  }
+}
+
+.works {
+  background-color: #000;
+}
+
+#page-start::before {
+  content: '';
+  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 130%;
+  height: 100vh;
+  top: 0;
+  left: 100%;
+  z-index: 9999;
+  color: #999;
+  text-align: center;
+  background-color: #fff;
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAIAAACRXR/mAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAABnSURBVHja7M5RDYAwDEXRDgmvEocnlrQS2SwUFST9uEfBGWs9c97nbGtDcquqiKhOImLs/UpuzVzWEi1atGjRokWLFi1atGjRokWLFi1atGjRokWLFi1af7Ukz8xWp8z8AAAA//8DAJ4LoEAAlL1nAAAAAElFTkSuQmCC") repeat 0 0;
+  pointer-events: none;
+}
+
+#page-start.is-slide-in::before {
+  -webkit-animation: slide-start 1.5s ease-in-out forwards;
+          animation: slide-start 1.5s ease-in-out forwards;
+}
+
+@-webkit-keyframes slide-start {
+  from {
+    left: 100%;
+    -webkit-transform: skew(10deg);
+            transform: skew(10deg);
+  }
+  to {
+    left: 0;
+  }
+}
+
+@keyframes slide-start {
+  from {
+    left: 100%;
+    -webkit-transform: skew(10deg);
+            transform: skew(10deg);
+  }
+  to {
+    left: 0;
   }
 }

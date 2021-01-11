@@ -40,9 +40,6 @@ $bg-height: 50px;
         from {
             transform: translateX(0);
         }
-        30% {
-            transform: translateX(0);
-        }
         to {
             transform: translateX(120%) skewX(10deg);
         }

@@ -3,7 +3,7 @@ $bg-url: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAIAAACRXR/mAAAA
 $bg-width: 50px;
 $bg-height: 50px;
 
-#page-animate {
+#page-end {
     &::before {
         content: '';
         position: fixed;
@@ -23,16 +23,16 @@ $bg-height: 50px;
     }
 }
 
-#page-animate.is-slide-in {
+#page-end.is-slide-in {
     &::before {
-        animation: slide-page 1.5s ease-in-out forwards;
-        @keyframes slide-page {
+        animation: slide-end 1.5s ease-in-out forwards;
+        @keyframes slide-end {
             from {
-                transform: translateX(0);
+                right: 100%;
+                transform: skew(10deg);
             }
             to {
-                transform-origin: top left;
-                transform: translateX(80%) skewX(10deg);
+                right: 0;
             }
         }
     }
