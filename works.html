@@ -17,6 +17,16 @@
     <link rel="apple-touch-icon" href="" sizes="180x180">
     <link rel="icon" type="image/png" href="" sizes="192x192">
     <title>Works - MCD</title>
+    <script src="https://cdn.jsdelivr.net/npm/viewport-extra@1.0.3/dist/viewport-extra.min.js"></script>
+    <script>
+        (function(){
+            let ua = navigator.userAgent
+            
+            let sp = ua.indexOf('iPhone') > -1 ||(ua.indexOf('Android') > -1 && ua.indexOf('Mobile') > -1)
+            
+            new ViewportExtra(sp ? 375 : 1200)
+        })()
+    </script>
 </head>
 
 <body class="works" id="page-start">
