@@ -1,4 +1,4 @@
-.works {
+body {
     background-color: #000;
 }
 
@@ -13,7 +13,6 @@
         height: 100vh;
         top: 0;
         left: 100%;
-        z-index: 9999;
         color: #999;
         text-align: center;
         background-color: #fff;
@@ -22,7 +21,7 @@
     }
 }
 
-#page-start.is-slide-in {
+.is-slide-in {
     &::before {
         animation: slide-start 1.5s ease-in-out forwards;
         @keyframes slide-start {
@@ -35,4 +34,22 @@
             }
         }
     }
+}
+
+
+main {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(70px);
+    transition: .8s;
+}
+main.fade-in {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0px);
+}
+
+h1 {
+    z-index: 10;
+    text-align: center;
 }

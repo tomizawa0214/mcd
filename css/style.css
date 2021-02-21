@@ -734,7 +734,7 @@ body {
   }
 }
 
-.works {
+body {
   background-color: #000;
 }
 
@@ -754,7 +754,6 @@ body {
   height: 100vh;
   top: 0;
   left: 100%;
-  z-index: 9999;
   color: #999;
   text-align: center;
   background-color: #fff;
@@ -762,7 +761,7 @@ body {
   pointer-events: none;
 }
 
-#page-start.is-slide-in::before {
+.is-slide-in::before {
   -webkit-animation: slide-start 1.5s ease-in-out forwards;
           animation: slide-start 1.5s ease-in-out forwards;
 }
@@ -787,4 +786,25 @@ body {
   to {
     left: 0;
   }
+}
+
+main {
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transform: translateY(70px);
+          transform: translateY(70px);
+  -webkit-transition: .8s;
+  transition: .8s;
+}
+
+main.fade-in {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px);
+}
+
+h1 {
+  z-index: 10;
+  text-align: center;
 }
