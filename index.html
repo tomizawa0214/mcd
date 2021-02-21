@@ -21,10 +21,16 @@
     <script>
         (function(){
             let ua = navigator.userAgent
-            
+        
             let sp = ua.indexOf('iPhone') > -1 ||(ua.indexOf('Android') > -1 && ua.indexOf('Mobile') > -1)
             
-            new ViewportExtra(sp ? 375 : 1200)
+            let tab = !sp && (
+                ua.indexOf('iPad') > -1 ||
+                (ua.indexOf('Macintosh') > -1 && 'ontouchend' in document) ||
+                ua.indexOf('Android') > -1
+            )
+            
+            new ViewportExtra(tab ? 1200 : 375)
         })()
     </script>
 </head>
