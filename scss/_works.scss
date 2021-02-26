@@ -42,6 +42,10 @@ main {
     visibility: hidden;
     transform: translateY(70px);
     transition: .8s;
+    h1 {
+        margin: 50px 0 100px;
+        text-align: center;
+    }
 }
 main.fade-in {
     opacity: 1;
@@ -49,7 +53,15 @@ main.fade-in {
     transform: translateY(0px);
 }
 
-h1 {
-    z-index: 10;
-    text-align: center;
+.works {
+    &__item {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 60px;
+        max-width: 1740px;
+        margin: 0 auto;
+        &--img {
+            max-width: 300px;
+        }
+    }
 }
